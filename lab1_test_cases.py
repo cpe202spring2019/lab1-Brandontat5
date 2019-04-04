@@ -1,7 +1,7 @@
-aimport unittest
+import unittest
 from lab1 import *
 
- # A few test cases.  Add more!!!
+# A few test cases.  Add more!!!
 class TestLab1(unittest.TestCase):
 
     def test_max_list_iter(self):
@@ -11,7 +11,12 @@ class TestLab1(unittest.TestCase):
             max_list_iter(tlist)
 
     def test_reverse_rec(self):
+        tlist = None
+        self.assertEqual(reverse_rec([1]), [1])
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])
+        self.assertEqual(reverse_rec([1,2,3,4]),[4,3,2,1])
+        with self.assertRaises(ValueError):  # used to check for exception
+            reverse_rec(tlist)
 
     def test_bin_search(self):
         list_val =[0,1,2,3,4,7,8,9,10]
@@ -22,4 +27,3 @@ class TestLab1(unittest.TestCase):
 if __name__ == "__main__":
         unittest.main()
 
-    
