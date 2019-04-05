@@ -30,11 +30,13 @@ class TestLab1(unittest.TestCase):
         """test bin_search"""
         tlist = None
         list_val = [0, 1, 2, 3, 4, 7, 8, 9, 10]
+        self.assertEqual(bin_search(1, 0, len(list_val) - 1, list_val), 1)
         self.assertEqual(bin_search(4, 0, len(list_val)-1, list_val), 4)
+        self.assertEqual(bin_search(9, 0, len(list_val) - 1, list_val), 7)
         self.assertEqual(bin_search(4, len(list_val)-1, 0, list_val), -1)
-        self.assertEqual(bin_search(4, 0, len(list_val)-1, []), 0)
+        self.assertEqual(bin_search(4, 0, len(list_val)-1, []), None)
         with self.assertRaises(ValueError):  # used to check for exception
-            reverse_rec(tlist)
+            bin_search(4, len(list_val)-1, 0, tlist)
 
 
 if __name__ == "__main__":

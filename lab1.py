@@ -33,18 +33,13 @@ def bin_search(target, low, high, int_list):  # must use recursion
             mid = (low + high) // 2  # compute the mid point here
             if int_list[mid] == target:
                 return mid
+            elif int_list[mid] > target:
+                return bin_search(target, low, mid - 1, int_list)
             else:
-                if int_list[mid] > target:
-                    bin_search(target, low, mid - 1, int_list)
-                else:
-                    bin_search(target, mid + 1, high, int_list)
+                return bin_search(target, mid + 1, high, int_list)
         return -1
     return None
 
 
-def main():
-    pass
-
-
-if __name__ == '__main__':
-    main()
+list_val = [0, 1, 2, 3, 4, 7, 8, 9, 10]
+print(bin_search(1, 0, len(list_val) - 1, list_val))
