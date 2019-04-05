@@ -21,14 +21,14 @@ def main():
     loc3 = Location("SLO", 35.3, -120.7)
     loc4 = loc1
 
-    print("Location 1:",loc1)
-    print("Location 2:",loc2)
-    print("Location 3:",loc3)
-    print("Location 4:",loc4)
+    print("Location 1:", loc1)
+    print("Location 2:", loc2)
+    print("Location 3:", loc3)
+    print("Location 4:", loc4)
 
-    print("\nLocation 1 equals Location 2:",loc1==loc2)
-    print("Location 1 equals Location 3:",loc1==loc3)
-    print("Location 1 equals Location 4:",loc1==loc4)
+    print("\nLocation 1 equals Location 2:", loc1 == loc2)
+    print("Location 1 equals Location 3:", loc1 == loc3)
+    print("Location 1 equals Location 4:", loc1 == loc4)
 
     locations = [loc1, loc2]
     print(loc1 in locations)
