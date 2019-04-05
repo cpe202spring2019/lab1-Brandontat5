@@ -39,7 +39,3 @@ def bin_search(target, low, high, int_list):  # must use recursion
                 return bin_search(target, mid + 1, high, int_list)
         return -1
     return None
-
-
-list_val = [0, 1, 2, 3, 4, 7, 8, 9, 10]
-print(bin_search(1, 0, len(list_val) - 1, list_val))
