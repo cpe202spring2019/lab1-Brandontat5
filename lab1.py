@@ -1,6 +1,8 @@
 def max_list_iter(int_list):  # must use iteration not recursion
-    """finds the max of a list of numbers and returns the value (not the index)
-    If int_list is empty, returns None. If list is None, raises ValueError"""
+    """
+    finds the max of a list of numbers and returns the value (not the index)
+    If int_list is empty, returns None. If list is None, raises ValueError
+    """
     if int_list is None:
         raise ValueError
     if len(int_list) > 0:
@@ -13,8 +15,10 @@ def max_list_iter(int_list):  # must use iteration not recursion
 
 
 def reverse_rec(int_list):  # must use recursion
-    """recursively reverses a list of numbers and returns the reversed list
-    If list is None, raises ValueError"""
+    """
+    recursively reverses a list of numbers and returns the reversed list
+    If list is None, raises ValueError
+    """
     if int_list is None:
         raise ValueError
     if len(int_list) > 0:
@@ -26,16 +30,22 @@ def reverse_rec(int_list):  # must use recursion
 
 
 def bin_search(target, low, high, int_list):  # must use recursion
+    """
+    Returns index of the target within the int_list using binary search
+    if int_list is None, raises ValueError
+    If int_list is empty, returns None
+    If low is greater than high, returns -1
+    """
     if int_list is None:
         raise ValueError
     if len(int_list) > 0:
         if low <= high:
             mid = (low + high) // 2  # compute the mid point here
             if int_list[mid] == target:
-                return mid
+                return mid  # returns index of target
             elif int_list[mid] > target:
-                return bin_search(target, low, mid - 1, int_list)
+                return bin_search(target, low, mid - 1, int_list)  # returns function call to look at lower half
             else:
-                return bin_search(target, mid + 1, high, int_list)
+                return bin_search(target, mid + 1, high, int_list)  # returns function call to look at upper half
         return -1
     return None
