@@ -34,7 +34,8 @@ def bin_search(target, low, high, int_list):  # must use recursion
     Returns index of the target within the int_list using binary search
     if int_list is None, raises ValueError
     If int_list is empty, returns None
-    If low is greater than high, returns -1
+    If low is greater than high, returns None
+    If it cannot find the target, returns None
     """
     if int_list is None:
         raise ValueError
@@ -47,5 +48,5 @@ def bin_search(target, low, high, int_list):  # must use recursion
                 return bin_search(target, low, mid - 1, int_list)  # returns function call to look at lower half
             else:
                 return bin_search(target, mid + 1, high, int_list)  # returns function call to look at upper half
-        return -1
+        return None
     return None
