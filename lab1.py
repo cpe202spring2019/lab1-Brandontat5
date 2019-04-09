@@ -18,6 +18,7 @@ def reverse_rec(int_list):  # must use recursion
     """
     recursively reverses a list of numbers and returns the reversed list
     If list is None, raises ValueError
+    If list is empty, returns None
     """
     if int_list is None:
         raise ValueError
