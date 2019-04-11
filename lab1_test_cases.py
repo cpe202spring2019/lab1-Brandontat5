@@ -1,7 +1,6 @@
 import unittest
 from lab1 import *
 
-
 class TestLab1(unittest.TestCase):
 
     def test_max_list_iter(self):
@@ -24,7 +23,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(reverse_rec([1, 2, 3, 4]), [4, 3, 2, 1])
 
     def test_reverse_rec_empty_list(self):
-        self.assertEqual(reverse_rec([]), None)
+        self.assertEqual(reverse_rec([]), [])
 
     def test_reverse_rec_none_list(self):
         tlist = None
